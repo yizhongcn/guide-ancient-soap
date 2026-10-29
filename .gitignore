@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# 原图备份（本地保留，不上传）
+_backup_images/
+
+# 系统文件
+Thumbs.db

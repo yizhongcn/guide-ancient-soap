@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>古法归德 · 徐丹萍非遗古法药皂艺术展</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:#0a0a0a;
+    color:#e8e8e8;
+    font-family:'Inter','Noto Serif SC',-apple-system,sans-serif;
+    font-weight:300;line-height:1.8;overflow-x:hidden;
+  }
+
+  /* ===== NAV ===== */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:18px 40px;display:flex;justify-content:space-between;align-items:center;
+    background:linear-gradient(180deg,rgba(0,0,0,.85),transparent);backdrop-filter:blur(8px);
+  }
+  nav .brand{font-size:13px;letter-spacing:4px;color:#fff;font-weight:500}
+  nav .brand span{color:#666;margin-left:8px;letter-spacing:2px;font-weight:300;font-size:11px}
+  nav a{color:#888;text-decoration:none;font-size:12px;letter-spacing:3px;margin-left:28px;transition:color .3s;text-transform:uppercase}
+  nav a:hover{color:#fff}
+
+  /* ===== HERO ===== */
+  .hero{
+    min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:100px 40px 60px;position:relative;overflow:hidden;
+    background:url('物料设计/主题背景.jpg') center/cover no-repeat;
+  }
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.25),rgba(10,10,10,.9))}
+  .hero-content{position:relative;z-index:2;text-align:center}
+  .hero .dates{font-size:13px;letter-spacing:6px;color:#999;margin-bottom:16px}
+  .hero .dates-en{font-size:10px;letter-spacing:3px;color:#555;margin-bottom:50px;text-transform:uppercase}
+  .hero h1{font-family:'Noto Serif SC',serif;font-size:clamp(56px,12vw,160px);font-weight:900;color:#fff;letter-spacing:10px;line-height:1;margin-bottom:24px}
+  .hero .subtitle{font-size:clamp(18px,2.5vw,30px);font-weight:300;color:#ccc;letter-spacing:10px;margin-bottom:10px}
+  .hero .subtitle-en{font-size:clamp(10px,1.1vw,13px);font-weight:400;color:#666;letter-spacing:6px;text-transform:uppercase;margin-bottom:60px}
+  .hero .meta{display:flex;gap:50px;justify-content:center;color:#888;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+  .hero .meta div span{display:block;color:#555;font-size:9px;letter-spacing:3px;margin-bottom:4px}
+  .hero .scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);color:#444;font-size:10px;letter-spacing:4px;z-index:2;animation:bounce 2s infinite}
+  @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+
+  /* ===== SECTIONS COMMON ===== */
+  section{padding:120px 40px;position:relative}
+  .container{max-width:1280px;margin:0 auto}
+  .section-label{font-size:10px;letter-spacing:5px;color:#444;text-transform:uppercase;margin-bottom:20px;font-weight:400}
+  .section-label::before{content:'— '}
+  .section-title-cn{font-family:'Noto Serif SC',serif;font-size:clamp(28px,4.5vw,48px);font-weight:600;color:#fff;letter-spacing:3px;margin-bottom:6px}
+  .section-title-en{font-size:10px;letter-spacing:5px;color:#555;text-transform:uppercase;margin-bottom:60px;font-weight:400}
+
+  /* ===== 01 BRAND + INHERITOR ===== */
+  .brand-section{background:linear-gradient(180deg,#0a0a0a 0%,#121212 50%,#0a0a0a 100%)}
+  .bi-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:100px}
+  /* Brand column */
+  .bi-brand h3{font-family:'Noto Serif SC',serif;font-size:22px;color:#fff;letter-spacing:3px;font-weight:500;margin-bottom:24px}
+  .bi-brand p{color:#aaa;font-size:14px;line-height:2.1;margin-bottom:18px;font-weight:300}
+  .bi-brand p.en{color:#666;font-size:12px;line-height:1.9;margin-top:14px}
+  .bi-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;padding-top:32px;border-top:1px solid #222}
+  .bi-stat .num{font-family:'Noto Serif SC',serif;font-size:40px;color:#fff;font-weight:600;letter-spacing:1px}
+  .bi-stat .cn{font-size:12px;color:#888;margin-top:2px}
+  .bi-stat .en{font-size:9px;color:#555;letter-spacing:2px;text-transform:uppercase}
+  /* Inheritor column */
+  .bi-inheritor{display:flex;flex-direction:column;gap:28px}
+  .bi-inh-head{display:flex;gap:20px;align-items:flex-start}
+  .bi-inh-photo{width:100px;height:100px;border-radius:4px;overflow:hidden;flex-shrink:0;background:#1a1a1a}
+  .bi-inh-photo img{width:100%;height:100%;object-fit:cover}
+  .bi-inh-info{flex:1}
+  .bi-inh-info .role{font-size:10px;color:#555;letter-spacing:2px;margin-bottom:6px;text-transform:uppercase}
+  .bi-inh-info h4{font-family:'Noto Serif SC',serif;font-size:24px;color:#fff;font-weight:600;letter-spacing:2px;margin-bottom:4px}
+  .bi-inh-info .en-name{font-size:10px;color:#555;letter-spacing:3px;text-transform:uppercase}
+  .bi-inh-text p{color:#aaa;font-size:13px;line-height:2;margin-bottom:12px}
+  .bi-inh-text p.en{color:#555;font-size:11px;line-height:1.85;margin-top:14px}
+
+  /* Divider line */
+  .bi-divider{width:1px;background:linear-gradient(180deg,transparent,#333,transparent);align-self:stretch}
+
+  /* ===== 02 CURATOR ===== */
+  .curator-section{background:#0a0a0a}
+  .curator-wrap{max-width:1040px;margin:0 auto}
+  .curator-cn{font-family:'Noto Serif SC',serif;font-size:15px;color:#bbb;line-height:2.1;font-weight:300;margin-bottom:60px}
+  .curator-cn p{margin-bottom:18px}
+  .curator-cn p.highlight{
+    border-left:2px solid #555;padding:10px 0 10px 24px;
+    font-size:20px;color:#fff;font-weight:500;line-height:1.8;letter-spacing:1px;
+    margin:36px 0;
+  }
+  .curator-en{font-size:12px;color:#555;line-height:1.95;column-count:2;column-gap:40px;column-rule:1px solid #1a1a1a}
+  .curator-en p{margin-bottom:14px}
+  .curator-en p.highlight{color:#775;font-size:13px;font-weight:500;letter-spacing:.5px}
+
+  /* ===== 03 SCENES (重点) ===== */
+  .scene-section{background:#070707;padding:100px 30px}
+  .scene-wrap{max-width:100%;margin:0 auto}
+  /* Big main image */
+  .scene-hero{position:relative;margin-bottom:16px;overflow:hidden;border-radius:4px}
+  .scene-hero img{width:100%;height:70vh;object-fit:cover;display:block}
+  .scene-hero .cap{
+    position:absolute;left:30px;bottom:28px;z-index:3;
+    color:#fff;font-family:'Noto Serif SC',serif;font-size:20px;letter-spacing:3px;
+  }
+  .scene-hero .cap-en{position:absolute;right:30px;bottom:28px;z-index:3;color:#aaa;font-size:10px;letter-spacing:4px;text-transform:uppercase}
+  /* Gallery grid */
+  .scene-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+  .scene-item{position:relative;border-radius:4px;overflow:hidden;cursor:pointer;background:#141414}
+  .scene-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+  .scene-item:hover img{transform:scale(1.04)}
+  .scene-item .cap{
+    position:absolute;left:0;right:0;bottom:0;padding:14px 18px;
+    background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);
+    color:#ccc;font-size:12px;letter-spacing:1px;opacity:0;transition:opacity .4s;
+  }
+  .scene-item:hover .cap{opacity:1}
+  /* Grid spans */
+  .sc-a{grid-column:span 7;aspect-ratio:16/10}
+  .sc-b{grid-column:span 5;aspect-ratio:16/10}
+  .sc-c{grid-column:span 4;aspect-ratio:4/5}
+  .sc-d{grid-column:span 4;aspect-ratio:4/5}
+  .sc-e{grid-column:span 4;aspect-ratio:4/5}
+
+  /* ===== 04 PRODUCTS (紧凑) ===== */
+  .product-section{background:#0a0a0a}
+  .prod-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+  .prod-item{aspect-ratio:1;border-radius:3px;overflow:hidden;position:relative;cursor:pointer;background:#141414}
+  .prod-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .4s;filter:grayscale(0)}
+  .prod-item:hover img{transform:scale(1.06);filter:grayscale(0)}
+  .prod-item::after{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(0deg,rgba(0,0,0,.75) 0%,transparent 50%);
+    opacity:0;transition:opacity .3s;
+  }
+  .prod-item:hover::after{opacity:1}
+  .prod-item .name{
+    position:absolute;left:10px;right:10px;bottom:8px;z-index:2;
+    transform:translateY(8px);opacity:0;transition:all .3s;
+  }
+  .prod-item:hover .name{transform:translateY(0);opacity:1}
+  .prod-item .cn{font-family:'Noto Serif SC',serif;font-size:12px;color:#fff;letter-spacing:1px}
+  .prod-item .en{font-size:8px;color:#888;letter-spacing:1.5px;text-transform:uppercase}
+
+  /* ===== FOOTER ===== */
+  footer{padding:60px 40px 32px;background:#050505;border-top:1px solid #151515}
+  .foot-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+  .foot-brand h3{font-family:'Noto Serif SC',serif;font-size:26px;color:#fff;letter-spacing:4px;font-weight:600;margin-bottom:8px}
+  .foot-brand h3 .en{font-size:11px;color:#555;letter-spacing:3px;font-weight:400;margin-left:10px}
+  .foot-brand p{color:#555;font-size:12px;line-height:1.9}
+  .foot-info{text-align:right;color:#666;font-size:11px;letter-spacing:2px;line-height:2}
+  .foot-bottom{max-width:1280px;margin:32px auto 0;padding-top:18px;border-top:1px solid #121212;display:flex;justify-content:space-between;color:#3a3a3a;font-size:10px;letter-spacing:2px}
+
+  /* ===== BUBBLE DECOR ===== */
+  .bubble{position:absolute;border-radius:50%;pointer-events:none;z-index:1}
+  .b1{width:140px;height:140px;background:radial-gradient(circle at 30% 30%,#ff6b9d,#c44569 60%,transparent 100%);top:20%;left:8%;opacity:.12;filter:blur(40px)}
+  .b2{width:220px;height:220px;background:radial-gradient(circle at 30% 30%,#4ecdc4,#a8e6cf 60%,transparent 100%);top:60%;right:10%;opacity:.1;filter:blur(50px)}
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:1024px){
+    .bi-wrap{grid-template-columns:1fr;gap:60px}
+    .bi-divider{width:100%;height:1px;background:#222}
+    .prod-grid{grid-template-columns:repeat(4,1fr)}
+    .curator-en{column-count:1}
+  }
+  @media(max-width:768px){
+    nav{padding:14px 20px}
+    nav a:not(:last-child):not(:first-child){display:none}
+    nav a{margin-left:16px;font-size:11px}
+    section{padding:80px 24px}
+    .scene-section{padding:60px 12px}
+    .scene-hero img{height:50vh}
+    .sc-a,.sc-b{grid-column:span 12}
+    .sc-c,.sc-d,.sc-e{grid-column:span 4}
+    .prod-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+    .bi-stats{grid-template-columns:repeat(2,1fr)}
+    .foot-inner{flex-direction:column;align-items:flex-start;gap:24px}
+    .foot-info{text-align:left}
+    .foot-bottom{flex-direction:column;gap:8px}
+  }
+  @media(max-width:480px){
+    .prod-grid{grid-template-columns:repeat(2,1fr)}
+    .sc-c,.sc-d,.sc-e{grid-column:span 4;aspect-ratio:1}
+  }
+
+  /* ===== REVEAL ===== */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="brand">古法归德 <span>GUIDE ANCIENT SOAP</span></div>
+  <div>
+    <a href="#about">关于</a>
+    <a href="#curator">前言</a>
+    <a href="#scenes">现场</a>
+    <a href="#works">作品</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bubble b1"></div>
+  <div class="bubble b2"></div>
+  <div class="hero-content">
+    <div class="dates">10月1日 — 12月25日</div>
+    <div class="dates-en">October 1 — December 25, 2026</div>
+    <h1>古法归德</h1>
+    <div class="subtitle">一块皂的舍与得</div>
+    <div class="subtitle-en">A Bar of Soap · Sacrifice &amp; Virtue</div>
+    <div class="meta">
+      <div><span>Curator</span>张恒语</div>
+      <div><span>Inheritor</span>徐丹萍</div>
+      <div><span>Venue</span>阜民里</div>
+    </div>
+  </div>
+  <div class="scroll">SCROLL ↓</div>
+</section>
+
+<!-- 01 BRAND + INHERITOR -->
+<section id="about" class="brand-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">About</div>
+      <div class="section-title-cn">品牌与传承人</div>
+      <div class="section-title-en">Brand Heritage &amp; The Inheritor</div>
+    </div>
+    <div class="bi-wrap">
+      <!-- Brand -->
+      <div class="bi-brand reveal">
+        <h3>归德古皂</h3>
+        <p>归德古皂，古称药皂，扎根商丘归德古城。上承殷商草本洁身文化与商周沃盟之礼，延续古代澡豆洗护传统，汲取《千金方》与北宋《太平圣惠方》古方智慧。</p>
+        <p>晚清时期，归德老郎中王占邦改良传统古方，因地制宜选用商丘本土草本，以天然动植物油脂碱水熬制皂品。自此代代相传，历经五代，已有百余年。</p>
+        <p class="en">Guide Ancient Soap, formerly medicinal soap, originates from Guide Ancient City in Shangqiu. Rooted in Yin-Shang herbal cleansing culture, it inherits formulas from classic medical texts including <em>Qianjin Yaofang</em> and <em>Taiping Shenghui Fang</em>.<br>Late Qing physician Wang Zhanbang perfected the craft with local herbs. Handed down through five generations.</p>
+        <div class="bi-stats">
+          <div class="bi-stat"><div class="num">5</div><div class="cn">五代传承</div><div class="en">Gens</div></div>
+          <div class="bi-stat"><div class="num">100+</div><div class="cn">百年技艺</div><div class="en">Years</div></div>
+          <div class="bi-stat"><div class="num">30+</div><div class="cn">本土草木</div><div class="en">Herbs</div></div>
+          <div class="bi-stat"><div class="num">6</div><div class="cn">传统工序</div><div class="en">Steps</div></div>
+        </div>
+      </div>
+
+      <div class="bi-divider"></div>
+
+      <!-- Inheritor -->
+      <div class="bi-inheritor reveal">
+        <div class="bi-inh-head">
+          <div class="bi-inh-photo"><img src="主题场景/IMG_0446.JPG" alt="徐丹萍"></div>
+          <div class="bi-inh-info">
+            <div class="role">商丘非遗 · 第五代传承人</div>
+            <h4>徐丹萍</h4>
+            <div class="en-name">DANPING XU · Fifth Gen Inheritor</div>
+          </div>
+        </div>
+        <div class="bi-inh-text">
+          <p>技艺源自家族代代相传的本草制皂古方，自年少跟随长辈学习识草、采药、熬皂，熟稔全套古法工序，深谙本草配伍之道。</p>
+          <p>多年来坚守古法核心：药材炮制、文火慢熬、揉搓擀压、自然皂化、阴干陈化。同时结合当代护肤需求，开发多系列本草皂品与非遗文创，并常态化开设公益传承课堂。</p>
+          <p class="en">Xu Danping masters the complete traditional process — herb processing, slow simmering, kneading, natural saponification and shade aging. She preserves the ancient craft while innovating for modern skincare, and regularly conducts public heritage classes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 CURATOR -->
+<section id="curator" class="curator-section">
+  <div class="curator-wrap">
+    <div class="reveal">
+      <div class="section-label">Curator Statement</div>
+      <div class="section-title-cn">一块皂的舍与得</div>
+      <div class="section-title-en">A Bar of Soap : Sacrifice &amp; Virtue</div>
+    </div>
+    <div class="curator-cn reveal">
+      <p>中国人的很多智慧，是从"舍不得"开始的。一滴油舍不得倒，一把草舍不得扔，灶膛里的灰扒拉两下，也总觉得还能干点什么。老祖宗没画什么复杂的哲学模型，找口锅，就把相生相克这事办了。</p>
+      <p class="highlight">生于油，亲近油，最后带走油。</p>
+      <p>这件事最有意思的地方是——胰脏本是油脂，成皂后转过身来，又负责洗油。归德古皂守着一口老锅，一边是成千上万，一边是小小一锅。</p>
+      <p>徐丹萍舍不得老配方，舍不得火候的分寸，舍不得晾晒陈化的漫长时光，舍不得代代相传的指尖手感。但舍不得不等于困在过往里自我感动。皂终究是用来洗的，好用与安心是根本。于是在该放手投入的时候，她格外舍得。</p>
+      <p class="highlight">千年的文化，就这样凝在一块皂上。不必供奉于高台，不必只供人瞻仰，只化作洗手时一缕淡淡的草木香。</p>
+    </div>
+    <div class="curator-en reveal">
+      <p>Much Chinese wisdom grows from cherishing resources. No oil, herbs or stove ash are cast aside. We name it circularity and sustainability, yet ancestors simply asked: why waste usable things?</p>
+      <p class="highlight">Born from oil, intimate with oil, and finally removing oil.</p>
+      <p>This oil-rich ingredient — pork pancreas — becomes a soap that cleans grease, embodying the ancient Chinese philosophy of mutual generation and restraint, realized in a simple pot.</p>
+      <p>Xu Danping preserves the old craft: selecting and simmering local herbs. Fire control relies on human judgment, irreplaceable by machines, followed by shaping, drying and aging.</p>
+      <p class="highlight">A millennium of culture, condensed into a single bar. Not displayed behind glass, but held in hand — a faint herbal fragrance with every wash.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 SCENES (重点) -->
+<section id="scenes" class="scene-section">
+  <div class="reveal">
+    <div class="section-label">Installation Views</div>
+    <div class="section-title-cn">展览现场</div>
+    <div class="section-title-en">On-Site · Visual Documentation</div>
+  </div>
+  <!-- Hero image -->
+  <div class="scene-hero reveal">
+    <img src="主题场景/IMG_0428.JPG" alt="展览现场全景">
+    <div class="cap">古法归德 · 阜民里</div>
+    <div class="cap-en">FUMINLI · SHANGQIU</div>
+  </div>
+  <!-- Gallery -->
+  <div class="scene-grid reveal">
+    <div class="scene-item sc-a"><img src="主题场景/IMG_0443.JPG" alt="现场"><div class="cap">展陈侧视</div></div>
+    <div class="scene-item sc-b"><img src="主题场景/IMG_0452.JPG" alt="现场"><div class="cap">产品陈列</div></div>
+    <div class="scene-item sc-c"><img src="主题场景/IMG_0433.JPG" alt="现场"><div class="cap">品牌海报</div></div>
+    <div class="scene-item sc-d"><img src="主题场景/IMG_0450.JPG" alt="现场"><div class="cap">产品展示</div></div>
+    <div class="scene-item sc-e"><img src="主题场景/IMG_0445.JPG" alt="现场"><div class="cap">空间一角</div></div>
+  </div>
+</section>
+
+<!-- 04 PRODUCTS (紧凑) -->
+<section id="works" class="product-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Exhibition Works</div>
+      <div class="section-title-cn">非遗产品</div>
+      <div class="section-title-en">Intangible Heritage Products</div>
+    </div>
+    <div class="prod-grid reveal">
+      <div class="prod-item"><img src="非遗产品/二十四节气.JPG" alt=""><div class="name"><div class="cn">二十四节气</div><div class="en">Twenty-Four Solar Terms</div></div></div>
+      <div class="prod-item"><img src="非遗产品/千年商字系列.JPG" alt=""><div class="name"><div class="cn">千年商字系列</div><div class="en">Thousand-Year Shang</div></div></div>
+      <div class="prod-item"><img src="非遗产品/古城四季皂.JPG" alt=""><div class="name"><div class="cn">古城四季皂</div><div class="en">Four Seasons of Guide</div></div></div>
+      <div class="prod-item"><img src="非遗产品/本草点心皂.JPG" alt=""><div class="name"><div class="cn">本草点心皂</div><div class="en">Herbal Pastry Soap</div></div></div>
+      <div class="prod-item"><img src="非遗产品/好皂头系列.JPG" alt=""><div class="name"><div class="cn">好皂头系列</div><div class="en">Heads of Soap</div></div></div>
+      <div class="prod-item"><img src="非遗产品/洗发皂.JPG" alt=""><div class="name"><div class="cn">洗发皂</div><div class="en">Hair Wash Bar</div></div></div>
+      <div class="prod-item"><img src="非遗产品/蒲公英沐浴皂.JPG" alt=""><div class="name"><div class="cn">蒲公英沐浴皂</div><div class="en">Dandelion Bath</div></div></div>
+      <div class="prod-item"><img src="非遗产品/马齿苋洁面皂团.JPG" alt=""><div class="name"><div class="cn">马齿苋洁面皂团</div><div class="en">Purslane Facial</div></div></div>
+      <div class="prod-item"><img src="非遗产品/咖啡洗碗皂、茜草内衣皂.JPG" alt=""><div class="name"><div class="cn">咖啡洗碗皂 · 茜草内衣皂</div><div class="en">Coffee Dish · Madder Underwear</div></div></div>
+      <div class="prod-item"><img src="非遗产品/木香腊梅皂.JPG" alt=""><div class="name"><div class="cn">木香腊梅皂</div><div class="en">Agarwood &amp; Winter Plum</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <h3>古法归德 <span class="en">GUIDE ANCIENT SOAP</span></h3>
+      <p>千年草本洁身智慧 · 五代匠人守护传承<br>Shangqiu Intangible Cultural Heritage</p>
+    </div>
+    <div class="foot-info">
+      展期 10.1 — 12.25 · 2026<br>
+      策展人 张恒语 · 传承人 徐丹萍<br>
+      归德古皂 · 河南商丘
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 古法归德 · Guide Ancient Soap</div>
+    <div>HERITAGE OF SHANGQIU · 商丘非遗</div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
